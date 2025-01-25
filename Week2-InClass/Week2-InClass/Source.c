@@ -1,7 +1,10 @@
 #include <stdio.h>
 
-// Define constants (if necessary)
-// Example: #define PI 3.14159265358979323846
+
+// Define constants 
+
+#define RADIUS 20
+#define PI 3.14159265358979323846
 
 // Function declarations
 void greet(void);                    // Student 1
@@ -13,8 +16,9 @@ void displayMenu(void);             // Student 6
 
 int main(void) {
     // Variable declarations
-    int choice;
+    int choice = 10;
     char input[100]; // For safer input handling
+    int (*funcPointer)(int, int);
 
     // Display a welcome message
     printf("Welcome to the Collaborative Code Management Program!\n");
@@ -22,11 +26,12 @@ int main(void) {
     // Call the display_menu() function
     displayMenu();
 
+
     // Accept user input for menu selection
     printf("\nEnter your choice: ");
     if (fgets(input, sizeof(input), stdin) != NULL) {
         // Parse the input (placeholder)
-        // Example: sscanf_s(input, "%d", &choice);
+       sscanf_s(input, "%d", &choice);
     }
 
     // Use a switch-case to handle menu options
@@ -41,7 +46,14 @@ int main(void) {
         // Call subtract function (placeholder)
         break;
     case 4:
-        // Call calculate_area function (placeholder)
+
+        // assign the address to the function pointer 
+        funcPointer = calculateArea;
+
+        //use the function pointer to call the function
+        int result = funcPointer(PI, RADIUS);
+
+        printf("the area is %d\n", result);
         break;
     case 5:
         // Call factorial function (placeholder)
@@ -58,7 +70,7 @@ int main(void) {
 
 // Student 1: Implement greet() function
 void greet(void) {
-    // Placeholder
+    printf("helloooo");
 }
 
 // Student 2: Modify add() function to take user input
@@ -74,9 +86,10 @@ int subtract(int a, int b) {
 }
 
 // Student 4: Implement calculate_area() function
-double calculateArea(double radius) {
-    // Placeholder
-    return 0.0; // Replace with actual logic
+double calculateArea(double radius) // Student 4
+{
+  
+    return RADIUS*RADIUS*PI; // Replace with actual logic
 }
 
 // Student 5: Develop factorial() function
