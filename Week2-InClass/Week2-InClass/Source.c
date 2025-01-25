@@ -6,7 +6,7 @@
 // Function declarations
 void greet(void);                    // Student 1
 int add(int a, int b);               // Student 2
-int subtract(int a, int b);          // Student 3
+int subtract(int a, int b);          // Nathaniel
 double calculateArea(double radius); // Student 4
 unsigned long long factorial(int n); // Student 5
 void displayMenu(void);             // Student 6
@@ -15,6 +15,8 @@ int main(void) {
     // Variable declarations
     int choice;
     char input[100]; // For safer input handling
+    int a = 15;
+    int b = 5;
 
     // Display a welcome message
     printf("Welcome to the Collaborative Code Management Program!\n");
@@ -26,7 +28,7 @@ int main(void) {
     printf("\nEnter your choice: ");
     if (fgets(input, sizeof(input), stdin) != NULL) {
         // Parse the input (placeholder)
-        // Example: sscanf_s(input, "%d", &choice);
+        sscanf_s(input, "%d", &choice);
     }
 
     // Use a switch-case to handle menu options
@@ -38,7 +40,7 @@ int main(void) {
         // Call add function (placeholder)
         break;
     case 3:
-        // Call subtract function (placeholder)
+        printf("The Result of Subtraction %d and %d is: %d", a, b, subtract(a, b));
         break;
     case 4:
         // Call calculate_area function (placeholder)
@@ -69,8 +71,9 @@ int add(int a, int b) {
 
 // Student 3: Complete subtract() function
 int subtract(int a, int b) {
-    // Placeholder
-    return 0; // Replace with actual logic
+
+    
+    return a - b;
 }
 
 // Student 4: Implement calculate_area() function
