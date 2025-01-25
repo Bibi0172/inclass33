@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#pragma warning(disable : 4996)
+
 // Define constants (if necessary)
 // Example: #define PI 3.14159265358979323846
 
@@ -26,7 +28,7 @@ int main(void) {
     printf("\nEnter your choice: ");
     if (fgets(input, sizeof(input), stdin) != NULL) {
         // Parse the input (placeholder)
-        // Example: sscanf_s(input, "%d", &choice);
+         sscanf_s(input, "%d", &choice);
     }
 
     // Use a switch-case to handle menu options
@@ -35,8 +37,19 @@ int main(void) {
         greet(); // Call greet function
         break;
     case 2:
-        // Call add function (placeholder)
+    {
+        int firstNumber;
+        int secondNumber;
+
+        printf("Enter a number: ");
+        scanf_s("%d", &firstNumber);
+
+        printf("Enter a number: ");
+        scanf_s("%d", &secondNumber);
+        int result = add(firstNumber,secondNumber);
+        printf("%d + %d = %d", firstNumber, secondNumber, result);
         break;
+    }
     case 3:
         // Call subtract function (placeholder)
         break;
@@ -63,8 +76,7 @@ void greet(void) {
 
 // Student 2: Modify add() function to take user input
 int add(int a, int b) {
-    // Placeholder
-    return 0; // Replace with actual logic
+    return a + b;
 }
 
 // Student 3: Complete subtract() function
