@@ -17,6 +17,7 @@ int main(void) {
     char input[100]; // For safer input handling
     int a = 15;
     int b = 5;
+    int n;
 
     // Display a welcome message
     printf("Welcome to the Collaborative Code Management Program!\n");
@@ -46,7 +47,7 @@ int main(void) {
         // Call calculate_area function (placeholder)
         break;
     case 5:
-        // Call factorial function (placeholder)
+        printf("The Factorial of 5 is: %ld", factorial(n);
         break;
     default:
         printf("Invalid choice. Please try again.\n");
@@ -84,8 +85,11 @@ double calculateArea(double radius) {
 
 // Student 5: Develop factorial() function
 unsigned long long factorial(int n) {
-    // Placeholder
-    return 0; // Replace with actual logic
+    int five = 5;
+    for (int i = 1; i <= five ; ++i) {
+        n *= i;
+    }
+    return n;
 }
 
 // Student 6: Implement display_menu() function
